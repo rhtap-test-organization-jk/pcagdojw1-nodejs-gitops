@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: pcagdojw1-nodejs-gitops
+  description: This is GitOps manifest for pcagdojw1-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: pcagdojw1-nodejs
+    backstage.io/kubernetes-id: pcagdojw1-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: pcagdojw1-nodejs-gitops   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:pcagdojw1-nodejs
